@@ -1,0 +1,32 @@
+version: "3"
+services:
+  scipy-notebook:
+    container_name: scipy
+    image: jupyter/scipy-notebook    
+    ports:
+      - 66:8888  
+    volumes:
+      - ./scipy:/home/jovyan/work
+  r-notebook:
+    container_name: r-notebook
+    image: jupyter/r-notebook    
+    ports:
+      - 77:8888 
+    volumes:
+      - ./r:/home/jovyan/work
+  tensorflow-notebook:
+    container_name: tensorflow
+    image: jupyter/tensorflow-notebook    
+    ports:
+      - 88:8888 
+    volumes:
+      - ./tensorflow:/home/jovyan/work
+  datascience-notebook:
+    container_name: datascience
+    image: jupyter/datascience-notebook    
+    ports:
+      - 99:8888 
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      - ./datascience:/home/jovyan/work
